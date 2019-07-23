@@ -1,0 +1,132 @@
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#fff;
+  background: #000;
+}
+
+.logo, .pimg2, .pimg3, .pimg4, .pimg1, .finalpic{
+  position:relative;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.logo{
+  background-image:url('../img/rnr logo.jpg');
+  background-size:contain;
+  min-height:100%;
+}
+
+.pimg1{
+  background-image:url('../img/background 1.jpg');
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('../img/background 2.jpg');
+  min-height:100%;
+}
+
+.pimg3{
+  background-image:url('../img/background 3.jpg');
+  min-height:100%;
+}
+
+.pimg4{
+  background-image:url('../img/background 4.jpg');
+  min-height:100%;
+}
+
+.finalpic{
+  background-image:url('../img/rnr logo blank.jpg');
+  background-size:contain;
+  min-height:100%;
+}
+
+.section{
+  padding:50px 80px;
+  min-height:100%;
+  text-align: center;
+}
+
+.who{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.maikel{
+  position:center;
+  text-align:center;
+}
+
+.stan{
+  position:center;
+  text-align:center;
+}
+
+.story{
+  padding:10px 10px;
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.portfolio{
+  width: 100%;
+  display: grid; 
+  grid-template-columns: repeat( auto-fit, minmax(384px, 384px));
+  grid-gap: 10px;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:50%;
+  text-align:center;
+  color:#FFF;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.finaltext{
+  position:absolute;
+  top:65%;
+  width:100%;
+  text-align:center;
+  vertical-align: text-bottom;
+  color:#FFF;
+  font-size:15px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .logo, .pimg2, .pimg3, .pimg4, .pimg1{
+    background-attachment:scroll;
+  }
+  .stan, .maikel{
+    font-size: 10px;
+  }
+}
