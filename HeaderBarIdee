@@ -1,0 +1,21 @@
+JavaScript voor Headerbar
+
+$(window).on('scroll', function() {
+    var header = $("#header");
+    if ($(this).scrollTop() > 500<AANTAL PIXELS>) {
+        if (!header.data('faded')) header.data('faded', 1).stop(true).fadeTo(400<FADE-TIJD>, 0.5);
+    } else if (header.data('faded')) {
+        header.data('faded', 0).stop(true).fadeTo(400, 1);
+    }
+});
+
+
+
+CSS voor header:
+body { height:5000px; }
+#header { position:fixed; background-color:red; height:50px; width:100%; }
+
+
+
+
+Ander idee: https://osvaldas.info/auto-hide-sticky-header
