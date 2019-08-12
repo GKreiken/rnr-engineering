@@ -11,6 +11,16 @@
 		var elSelector	= '.nav-bar',
 			element		= document.querySelector( elSelector );
 
+		/*    Load tijd voor de NavBar	
+
+			window.addEventListener('load', function () {
+				setTimeout (function () {
+					element.style.top = '0px';
+				}, 2000)
+			}
+			)
+		*/
+
 		if( !element ) return true;
 
 		var elHeight		= 0,
@@ -29,10 +39,10 @@
 			wScrollCurrent	= window.pageYOffset;
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
 			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
-			if( wScrollCurrent <= 60 ) // scrolled to the very top; element sticks to the top
+			/*if( wScrollCurrent <= 60 ) // scrolled to the very top; element sticks to the top
 				element.style.top = '0px';
 
-			else if( wScrollDiff > 0 ) // scrolled up; element slides in
+			else*/ if( wScrollDiff > 0 ) // scrolled up; element slides in
 				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
 
 			else if( wScrollDiff < 0 ) // scrolled down
@@ -48,3 +58,61 @@
 		});
 
 	}( document, window, 0 ));
+
+
+
+	
+// Portfolio Items Dialog
+
+const portfolioItems = Array.from(document.querySelectorAll('.portfolio .portfcontainer'));
+const portfolioDialogs = Array.from(document.querySelectorAll('.portfolio .dialog'));
+const portfolioDialogContents = Array.from(document.querySelectorAll('.portfolio .dialog .dialog-content'));
+const closeButtons = Array.from(document.querySelectorAll('.portfolio .close'));
+const dialogImg = Array.from(document.querySelectorAll('.dialogimg'));
+
+const dialogActiveClass = 'active';
+
+function closeDialog(dialog) {
+  dialog.classList.remove(dialogActiveClass);
+}
+
+function openDialog(dialog) {
+  dialog.classList.add(dialogActiveClass);
+}
+
+portfolioItems.forEach(function(el) {
+  el.addEventListener('click', function() {
+    const dialog = portfolioDialogs.find(function(d) {
+      return d.id === el.id;
+    });
+    if(dialog) {
+      openDialog(dialog);
+    }
+  });
+});
+
+closeButtons.forEach(function(el) {
+  el.addEventListener('click', function() {
+	portfolioDialogs.forEach(closeDialog);
+  });
+});
+
+dialogImg.forEach(function(el) {
+	el.addEventListener('click', function() {
+	  portfolioDialogs.forEach(closeDialog);
+	});
+  });
+
+portfolioDialogs.forEach(function(el) {
+  el.addEventListener('click', function() {
+    closeDialog(el);
+  });
+});
+
+
+portfolioDialogContents.forEach(function(el) {
+  el.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+  });
+});
