@@ -29,8 +29,7 @@
 			wScrollCurrent	= window.pageYOffset;
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
 			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
-
-			if( wScrollCurrent <= 600 ) // scrolled to the very top; element sticks to the top
+			if( wScrollCurrent <= 60 ) // scrolled to the very top; element sticks to the top
 				element.style.top = '0px';
 
 			else if( wScrollDiff > 0 ) // scrolled up; element slides in
