@@ -81,15 +81,18 @@ a:active {
   color: #FFF;
 }
 
-.logo, .pimg2, .pimg3, .pimg4, .pimg1, .finalpic{
+.logo, .pimg1, .pimg2, .pimg3, .pimg4, .finalpic{
   position:relative;
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
+<<<<<<< Updated upstream
   /*
     fixed = parallax
     scroll = normal
   */
+=======
+>>>>>>> Stashed changes
   background-attachment:fixed;
 }
 
@@ -303,4 +306,18 @@ a:active {
   background-color:#111;
   color:#fff;
   padding:20px;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+/*
+@media(max-width:568px){
+  .logo, .pimg1, .pimg2, .pimg3, .pimg4, .finalpic{    
+    
+    background-attachment:scroll;
+  }
+} 
+*/
+>>>>>>> Stashed changes
