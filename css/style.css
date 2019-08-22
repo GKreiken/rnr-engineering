@@ -1,17 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
 body, html{
-  /* height:100%; */
-  margin:0;
+  margin:0px;
   font-size:16px;
   font-family:"Exo", sans-serif;
   font-weight:400;
   color:#fff;
   background: #000;
   scroll-behavior: smooth;
-}
-
-h1 {
-  font-family: 'Exo', sans-serif;
-  font-size: 50px;
 }
 
 .nav-bar
@@ -87,6 +85,17 @@ a:active {
   color: #FFF;
 }
 
+.section{ 
+  min-height:100vh;
+  text-align: center;
+}
+
+h1 {
+  padding:60px;
+  font-family: 'Exo', sans-serif;
+  font-size: 50px;
+}
+
 .logo, .pimg1, .pimg2, .pimg3, .pimg4, .finalpic{
   position:relative;
   background-position:center;
@@ -96,9 +105,8 @@ a:active {
 }
 
 .logo{
-  background-image:url('../img/rnr logo.jpg');
-  object-fit: cover;
-  background-size:100vh auto;
+  background-image:url('../img/rnr logo.jpeg');
+  background-size:100vh;
   min-height:100vh;
   display: flex;
   align-items: center;
@@ -140,8 +148,6 @@ a:active {
   transform: rotate(-30deg);
 }
 
-
-
 .pimg1{
   background-image:url('../img/background 1.jpg');
   min-height:100vh;
@@ -163,22 +169,14 @@ a:active {
 }
 
 .finalpic{
-  background-image:url('../img/rnr logo blank.jpg');
+  background-image:url('../img/rnr logo blank.png');
   background-size:100vh auto;
   min-height:100vh;
-}
-
-.section{
-  padding:5vw 5vh;
-  min-height:100vh;
-  text-align: center;
 }
 
 .who {
   position: relative;
   margin: auto;
-  height: 100vh;
-  width: 100%;
   max-width: 700px;
   overflow: hidden;
 }
@@ -229,31 +227,71 @@ a:active {
   top: 50%
 }
 
+.naam {
+  font-size: 30px;
+  font-weight: 900px;
+}
+
+.flash {
+  position: relative;
+  font-size: 30px;
+  top: 25%;
+}
+
 .boom {
   position: relative;
+  color: rgba(255,255,255, 0);
+  animation: BOOM-text 2s infinite;
+  font-size: 4vh;
+  font-family: Frijole;
+  top: 25%;
 }
+
+@keyframes BOOM-text
+{
+     3% {
+          color: rgba(255,255,255, 0.8);
+     }
+     25% {
+          color: rgba(255,255,255, 0);
+     }
+     26% {
+          color: rgba(255,255,255, 0);
+     } 
+     30% {
+          color: rgba(255,255,255, 0.8);
+     }
+     75% {
+          color: rgba(255,255,255, 0);
+     }
+     100% {
+          color: rgba(255,255,255, 0);
+     }
+}
+
 .boom::after {
   content: '';
   position: absolute;
-  width: 2px;
-  height: 2px;
+  width: 1px;
+  height: 1px;
   border-radius: 50%;
   background-color: rgba(255,255,255, 0);
-  animation: shadow-pulse 2s infinite;
+  animation: pulse 2s infinite;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   margin: auto;
+  
 }
 
-@keyframes shadow-pulse
+@keyframes pulse
 {
      0% {
           box-shadow: 0 0 0 0px rgba(255,255,255, 0.8);
      }
      25% {
-          box-shadow: 0 0 0 100px rgba(255,255,255, 0);
+          box-shadow: 0 0 0 8vh rgba(255,255,255, 0);
      }
      26% {
           box-shadow: 0 0 0 0px rgba(255,255,255, 0);
@@ -262,22 +300,32 @@ a:active {
           box-shadow: 0 0 0 0px rgba(255,255,255, 0.8);
      }
      52% {
-          box-shadow: 0 0 0 100px rgba(255,255,255, 0);
+          box-shadow: 0 0 0 8vh rgba(255,255,255, 0);
      }
      100% {
-          box-shadow: 0 0 0 305px rgba(255,255,255, 0);
+          box-shadow: 0 0 0 0px rgba(255,255,255, 0);
      }
 }
 
-
 .story{
-  padding:10px 10px;
-  margin: auto;
+  margin: 20px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#story-left {
   max-width: 400px;
-  text-align: center;
+  align-self: flex-start;
+}
+
+#story-right {
+  max-width: 400px;
+  align-self: flex-end;
 }
 
 .portfolio{
+  padding: 30px;
   width: 100%;
   display: grid; 
   grid-template-columns: repeat( auto-fit, minmax(350px, 1fr));
@@ -392,9 +440,8 @@ a:active {
   text-align:center;
   vertical-align: text-bottom;
   color:#FFF;
-  font-size:15px;
-  letter-spacing:8px;
-  text-transform:uppercase;
+  font-size:2.5vh;
+  letter-spacing:2px;
 }
 
 .ptext .border{
