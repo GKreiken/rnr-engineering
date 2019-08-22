@@ -11,16 +11,16 @@
 		var elSelector	= '.nav-bar',
 			element		= document.querySelector( elSelector );
 
-		/*    Load tijd voor de NavBar	
+		    //Load tijd voor de NavBar	
 
 			window.addEventListener('load', function () {
 				setTimeout (function () {
 					element.style.top = '0px';
-				}, 2000)
+				}, 2500)
 			}
 			)
-		*/
-
+		
+		
 		if( !element ) return true;
 
 		var elHeight		= 0,
@@ -39,10 +39,10 @@
 			wScrollCurrent	= window.pageYOffset;
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
 			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
-			/*if( wScrollCurrent <= 60 ) // scrolled to the very top; element sticks to the top
+			if( wScrollCurrent <= 60 ) // scrolled to the very top; element sticks to the top
 				element.style.top = '0px';
-
-			else*/ if( wScrollDiff > 0 ) // scrolled up; element slides in
+/*
+			else if( wScrollDiff > 0 ) // scrolled up; element slides in
 				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
 
 			else if( wScrollDiff < 0 ) // scrolled down
@@ -52,14 +52,14 @@
 
 				else // scrolled down; element slides out
 					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
-			}
+			}*/
 
 			wScrollBefore = wScrollCurrent;
 		});
 
-	}( document, window, 0 ));
-
-
+	}( document, window, 0 )); 
+	
+	
 
 	
 // Portfolio Items Dialog
